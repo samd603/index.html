@@ -24,6 +24,12 @@
       maxZoom: 17,
       minZoom: 9
     }).addTo(map);
+    
+  // load GeoJSON from an external file
+  $.getJSON("tfwm_rail_stations.geojson",function(data){
+    // add GeoJSON layer to the map once the file is loaded
+    L.geoJson(data).addTo(map);
+  });
  
   </script>
 </body>
