@@ -26,7 +26,7 @@
     }).addTo(map);
     
   // load GeoJSON from an external file
-  $.getJSON("tfwm_rail_stations_3857.geojson",function(data){
+  $.getJSON("railway_stations_3857.geojson",function(data){
     // add GeoJSON layer to the map once the file is loaded
     L.geoJson(data).addTo(map);
   });
