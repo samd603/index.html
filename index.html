@@ -2,6 +2,7 @@
 <head>
   <title>A Leaflet map!</title>
   <link rel="stylesheet" href="./Leaflet-1.0.3/leaflet.css"/>
+    <script src="jquery-3.6.3.min.js"></script> 
   <script src="./Leaflet-1.0.3/leaflet.js"></script>
   <style>
     #map{ height: 100% }
@@ -24,6 +25,12 @@
       minZoom: 9
     }).addTo(map);
 
+  // load GeoJSON from an external file
+  $.getJSON("tfwm_rail_stations.geojson",function(data){
+    // add GeoJSON layer to the map once the file is loaded
+    L.geoJson(data).addTo(map);
+  });
+ 
   </script>
 </body>
 </html>
